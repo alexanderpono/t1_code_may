@@ -1,11 +1,15 @@
-const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-const alphabetS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+import { capitals, smalls } from './alphabet';
 
 export const encodeChar = (char: string, N: number): string => {
-    const index = alphabetS.indexOf(char);
+    let alphabet = capitals;
+    let index = alphabet.indexOf(char);
+    if (index < 0) {
+        alphabet = smalls;
+        index = alphabet.indexOf(char);
+    }
     let encodedIndex = index + N;
-    if (encodedIndex > alphabetS.length) {
-        encodedIndex -= alphabetS.length;
+    if (encodedIndex > alphabet.length) {
+        encodedIndex -= alphabet.length;
     }
     return alphabet[encodedIndex];
 };

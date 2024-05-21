@@ -4,6 +4,7 @@ describe('caesarEncode', () => {
     test.each`
         char        | N    | expected
         ${'WISDOM'} | ${5} | ${'BNXITR'}
+        ${'WisdoM'} | ${5} | ${'BnxitR'}
     `('it returns $expected from ($char, $N)', async ({ char, N, expected }) => {
         expect(caesarEncode(char, N)).toBe(expected);
     });
