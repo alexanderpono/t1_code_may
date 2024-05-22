@@ -1,4 +1,4 @@
-import { buildTree } from './huffmanEncode';
+import { buildTree } from './common';
 
 console.log('huffman');
 

@@ -1,4 +1,5 @@
-import { buildTree, huffmanEncode } from './huffmanEncode';
+import { buildTree } from './common';
+import { huffmanEncode } from './huffmanEncode';
 
 describe('huffmanEncode', () => {
     const tree = buildTree(['Pa', 'Pb', 'Pc', 'C', 'C']);
