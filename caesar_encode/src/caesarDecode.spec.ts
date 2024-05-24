@@ -2,9 +2,12 @@ import { caesarDecode, decodeChar } from './caesarDecode';
 
 describe('caesarDecode', () => {
     test.each`
-        char        | N    | expected
-        ${'BNXITR'} | ${5} | ${'WISDOM'}
-        ${'BnXiTr'} | ${5} | ${'WiSdOm'}
+        char                            | N      | expected
+        ${'BNXITR'}                     | ${5}   | ${'WISDOM'}
+        ${'BnXiTr'}                     | ${5}   | ${'WiSdOm'}
+        ${'May the Force be with you.'} | ${0}   | ${'May the Force be with you.'}
+        ${'ksav'}                       | ${18}  | ${'said'}
+        ${'Ywnla'}                      | ${100} | ${'Carpe'}
     `('it returns $expected from ($char, $N)', async ({ char, N, expected }) => {
         expect(caesarDecode(char, N)).toBe(expected);
     });

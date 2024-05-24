@@ -6,9 +6,12 @@ export const encodeChar = (char: string, N: number): string => {
     if (index < 0) {
         alphabet = smalls;
         index = alphabet.indexOf(char);
+        if (index < 0) {
+            return char;
+        }
     }
     let encodedIndex = index + N;
-    if (encodedIndex > alphabet.length) {
+    while (encodedIndex >= alphabet.length) {
         encodedIndex -= alphabet.length;
     }
     return alphabet[encodedIndex];

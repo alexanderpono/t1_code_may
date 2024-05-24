@@ -1,0 +1,152 @@
+export const case1 = {
+    input: `5
+Pa
+Pb
+Pc
+C
+C
+ababacac`,
+    expected: '010010011011'
+};
+
+export const case2 = {
+    input: `53
+Pk
+PM
+Pv
+C
+C
+Pl
+C
+Pn
+Pr
+Pu
+C
+C
+C
+Po
+Ps
+Pw
+C
+C
+C
+Pe
+Px
+PY
+C
+Py
+C
+Pi
+C
+C
+Pa
+C
+C
+Pt
+P.
+C
+P'
+Pb
+C
+Pc
+C
+C
+Pd
+Pm
+C
+Pf
+C
+Pg
+Ph
+C
+C
+C
+P 
+C
+C
+Mama always said life was like a box of chocolates. You never know what you're gonna get.`,
+    expected:
+        '0000010011101001011110110000100111011010101001101100110011010111010001100001010111010101001100111011001101100001010110000000100110111110010100100101000110010101011110011101110010100110010000010111000001000011010001110101001001000011111000100100000001101000001101100000000010001000111110011110111011100001101010100100001111001000001100100111011000100001000010011111011001001000010001'
+};
+
+export const case3 = {
+    input: `37
+Pc
+Pg
+C
+Ph
+C
+Pi
+PI
+C
+Pk
+Ps
+C
+C
+C
+Pn
+Po
+Pr
+C
+C
+C
+Pf
+Pm
+C
+Pe
+C
+C
+Pt
+Pu
+C
+P.
+C
+P'
+C
+Pa
+C
+P 
+C
+C
+I'm gonna make him an offer he can't refuse.`,
+    expected:
+        '000101100101011100000100110001000101011101011010001100111100001000100010111101001011001100100010001100111110000101111000000101001010011000001100111011010010000100011101110001'
+};
+
+export const case4 = {
+    input: `25
+Pk
+Pp
+C
+Pr
+C
+P 
+C
+Pe
+Pn
+C
+C
+PS
+Pt
+C
+PE
+C
+Pa
+C
+Pd
+PF
+Pi
+C
+C
+C
+C
+Speak Friend and Enter`,
+    expected: '1000000001010101000000011110000111110100111100011010111100011001011100010100001'
+};
+
+export const cases = {
+    case1,
+    case2,
+    case3,
+    case4
+};
