@@ -1,12 +1,9 @@
-interface DigitEncodeResult {
-    encoded: string;
-    memory: number;
-}
-export const defaultDigitEncodeResult: DigitEncodeResult = {
+
+const defaultDigitEncodeResult = {
     encoded: '',
     memory: 0
 };
-export const encodeDigit = (indexFrom0To9: number): DigitEncodeResult => {
+const encodeDigit = (indexFrom0To9) => {
     const indexToEncoded = {
         0: {
             encoded: '0',
@@ -53,12 +50,12 @@ export const encodeDigit = (indexFrom0To9: number): DigitEncodeResult => {
     return indexToEncoded[indexFrom0To9];
 };
 
-export const numberEncode = (num: number): string => {
+const numberEncode = (num) => {
     let curNum = num;
     let MAX_LOOP_NUMBER = 10;
     let counter = 0;
     let resultAr = [];
-    let previousEncodeResult: DigitEncodeResult = defaultDigitEncodeResult;
+    let previousEncodeResult = defaultDigitEncodeResult;
 
     while (curNum > 0 && counter < MAX_LOOP_NUMBER) {
         const nextNum = Math.floor(curNum / 10);
@@ -86,3 +83,17 @@ export const numberEncode = (num: number): string => {
 
     return result;
 };
+
+process.stdin.resume();
+process.stdin.setEncoding('utf-8');
+var stdin_input = '';
+process.stdin.on('data', function (input) {
+    stdin_input += input; // get the input
+});
+process.stdin.on('end', function () {
+    main(stdin_input);
+});
+function main(input) {
+    // const src = input;
+    process.stdout.write(numberEncode(input));
+}
